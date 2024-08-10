@@ -1,6 +1,8 @@
 # FluxPseudoNegative: A ComfyUI Node for Converting Negative Prompts to Positive Attributes
 
-FluxPseudoNegative is an advanced custom node for ComfyUI that converts negative prompts into positive ones. It's designed to enhance prompt engineering for image generation models that don't natively support negative prompts or where using negative prompts significantly increases generation time.
+FluxPseudoNegative is an advanced custom node for ComfyUI that converts negative prompts into positive ones. It's designed to enhance prompt engineering for image generation models that don't natively support negative prompts or where using negative prompts significantly increases generation time.  So instead of hacking CFG we simply invert your negative words and find their antonyms!  
+
+There are some promising techniques to get negative prompts working in Flux that will probably render this idea completely useless... But since I had already done the work I decided to complete at least a minimally viable node and ship it.
 
 ## Features
 
@@ -16,6 +18,13 @@ FluxPseudoNegative is an advanced custom node for ComfyUI that converts negative
 - Multiple processing complexity levels: basic, advanced, expert
 - Optional LLM integration for unresolved terms or full prompt conversion
 - User-customizable antonyms and system prompts
+
+## Caveats
+
+- Its not meant to be perfect!  Its an imperfect solution to the issues of using CFG making the generation time double more or less.
+- For now I would NOT use conceptnet expansion.  Its not working as intended.
+- A word like Gross has multiple meanings and the correct one cannot be inferred. ('disgusting' is one meaning, and can also mean the 'total' in reference to taxes for instance).  This can result in unexpected return words
+
 
 ## Installation
 
