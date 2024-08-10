@@ -19,26 +19,26 @@ FluxPseudoNegative is an advanced custom node for ComfyUI that converts negative
 
 ## Installation
 
-1. Clone this repository into your ComfyUI `custom_nodes` directory:
+1. Install via Git option using ComfyUI Manager. Or Clone this repository into your ComfyUI `custom_nodes` directory:
 
-[CODE]
+```
 git clone https://github.com/yourusername/ComfyUI-FluxPseudoNegativePrompt.git
-[/CODE]
+```
 
 2. Install the required dependencies:
 
-[CODE]
-pip install nltk textblob requests numpy transformers torch
-[/CODE]
+```
+pip install nltk textblob requests
+```
 
-3. Download the required NLTK data:
+3. Download the required NLTK data: (done automatically when used)
 
-[CODE]
+```
 import nltk
 nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
 nltk.download('wordnet')
-[/CODE]
+```
 
 ## Usage
 
@@ -74,11 +74,11 @@ nltk.download('wordnet')
 
 - `__init__.py`: Initializes the node for ComfyUI
 - `FluxPseudoNegative.py`: Contains the main `FluxPseudoNegativeNode` class
-- `flux_utils.py`: Contains the `PhraseHandler` class and `strength_map`
+- `flux_utils.py`: Contains the `PhraseHandler` class and `strength_map`.
 
 ## Customization
 
-You can customize the phrase mappings and strength map by modifying the `flux_utils.py` file.
+You can customize the phrase mappings and strength map by modifying the `flux_utils.py` file.  You can also load custom antonym dictionaries, in the text box or from a text file one per line. You can also specify a custom LLM system prompt to integrate your negative prompt into for conversion in a 3rd party LLM node (the node comes packaged with 3 already tested/validated).
 
 ## Note
 
