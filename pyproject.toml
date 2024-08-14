@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-fluxpseudonegativeprompt"
+description = "FluxPseudoNegative is an advanced custom node for ComfyUI that converts negative prompts into positive ones. It's designed to enhance prompt engineering for image generation models that don't natively support negative prompts or where using negative prompts significantly increases generation time. So instead of hacking CFG we simply invert your negative words and find their antonyms!"
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["nltk==3.8.1", "textblob==0.17.1", "requests==2.31.0"]
+
+[project.urls]
+Repository = "https://github.com/NeuralSamurAI/ComfyUI-FluxPseudoNegativePrompt"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-FluxPseudoNegativePrompt"
+Icon = ""
